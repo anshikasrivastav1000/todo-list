@@ -26,10 +26,12 @@ function Todo() {
         setTodos(todos.map(todo =>(todo.id === id ? res.data : todo)));
         setEditingTodos(null);
     };
-    const deleteTodo = async (id) =>{
+
+    const deleteTodo = async (id) => {
         await axiosInstance.delete(`/api/todos/${id}`);
         setTodos(todos.filter(todo => todo.id !== id));
     };
+
 
   return (
     <div className="App">
@@ -41,7 +43,7 @@ function Todo() {
         placeholder="Enter a new task"
       />
       <button onClick={addTodo}>Add Task</button>
-      <ul>
+     <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
             {editingTodos === todo.id ? (
@@ -59,7 +61,8 @@ function Todo() {
             )}
           </li>
         ))}
-      </ul>
+      </ul> 
+     
     </div>
   )
 }
