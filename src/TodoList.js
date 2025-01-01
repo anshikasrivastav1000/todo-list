@@ -4,7 +4,7 @@ import './TodoList.css'
 function TodoList() {
   const [todos, setTodos] = useState([]);
 
-  // Fetch To-Dos from API
+
   useEffect(() => {
     const fetchTodos = async () => {
       try {
@@ -18,7 +18,7 @@ function TodoList() {
     fetchTodos();
   }, []);
 
-  // Update a To-Do
+
   const handleUpdate = async (id, updatedTitle) => {
     try {
       const response = await api.put(`/api/todos${id}`, { title: updatedTitle });
@@ -42,7 +42,7 @@ function TodoList() {
 //     }
 //   };
 
-  // Delete a To-Do
+  
   const handleDelete = async (id) => {
     try {
       await api.delete(`/api/todos/${id}`);

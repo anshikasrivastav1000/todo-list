@@ -12,9 +12,9 @@ function AddTodo({ onAdd }) {
     }
 
     try {
-      const response = await api.post("/api/todos", { title });
-      onAdd(response.data); // Notify parent about the new todo
-      setTitle(""); // Clear input field
+      const response = await api.post("/api/todos", {title});
+      onAdd(response.data); 
+      setTitle("");
     } catch (error) {
       alert("Failed to add todo. Please try again.");
     }
